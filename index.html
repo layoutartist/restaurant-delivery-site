@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover special and delicious food at Food Hub." />
+    <title>FOOD HUB - Special & Delicious Food</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://googleapis.com" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-screen">
+      <section class="intro-screen" aria-labelledby="intro-title">
+        <div class="intro__brand">
+          <div class="intro__logo" aria-hidden="true">
+            <i class="fa-solid fa-bowl-food"></i>
+          </div>
+          <h1 class="intro__title" id="intro-title">FOOD HUB</h1>
+          <p class="intro__tagline">Special &amp; Delicious food</p>
+        </div>
+        <a class="intro__continue" href="#menu-screen" aria-label="Go to the menu">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </section>
+      <section id="menu-screen" class="menu-screen hidden" aria-labelledby="menu-title">
+        <header class="menu-header">
+          <div class="menu-header__top">
+            <button id="back-to-intro" class="back-btn" type="button" aria-label="Back to intro">←</button>
+            <div class="menu-header__identity">
+              <span class="menu-header__logo" aria-hidden="true">
+                <i class="fa-solid fa-bowl-food"></i>
+              </span>
+              <div class="menu-header__identity-copy">
+                <span class="menu-header__eyebrow" data-i18n="headerEyebrow">Смачного щодня</span>
+                <h1 class="menu-header__title" id="menu-title">Discover</h1>
+              </div>
+            </div>
+            <div class="menu-header__actions">
+              <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+              </button>
+              <button class="cart-icon" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-controls="cart-modal">
+                <i class="fas fa-shopping-basket" aria-hidden="true"></i>
+                <span id="cart-count" aria-live="polite">0</span>
+              </button>
+            </div>
+          </div>
+          <div class="menu-header__search-row">
+            <label class="search-box">
+              <span class="visually-hidden">Search food</span>
+              <input id="food-search" type="text" placeholder="Search Food Here" />
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </label>
+            <div class="language-toggle" role="group" aria-label="Choose language">
+              <button class="language-toggle__option" type="button" data-language="uk" aria-pressed="true">UA</button>
+              <button class="language-toggle__option" type="button" data-language="en" aria-pressed="false">EN</button>
+            </div>
+          </div>
+        </header>
+
+        <aside class="category-sidebar" aria-label="Навігація за категоріями">
+          <h2 class="category-sidebar__title" data-i18n="categoriesHeading">Категорії</h2>
+          <nav class="category-nav" aria-label="Категорії меню">
+            <a class="category-nav__link" href="#appetizers-category-title" data-category-link="appetizers-category-title">Закуски</a>
+            <a class="category-nav__link" href="#pasta-dishes-category-title" data-category-link="pasta-dishes-category-title">Страви з пасти</a>
+            <a class="category-nav__link" href="#pizza-category-title" data-category-link="pizza-category-title">Піца</a>
+            <a class="category-nav__link" href="#burgers-category-title" data-category-link="burgers-category-title">Бургери та сендвічі</a>
+            <a class="category-nav__link" href="#main-course-category-title" data-category-link="main-course-category-title">Основні страви</a>
+            <a class="category-nav__link" href="#sweet-category-title" data-category-link="sweet-category-title">Десерти</a>
+            <a class="category-nav__link" href="#drinks-category-title" data-category-link="drinks-category-title">Напої</a>
+          </nav>
+        </aside>
+
+        <div class="menu-content">
+        <div class="category-block" aria-labelledby="appetizers-category-title">
+          <h3 class="category-title" id="appetizers-category-title">Appetizers</h3>
+          <div class="menu-grid">
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Crispy chicken wings with dipping sauce" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Crispy Chicken Wings</h3>
+                <p class="food-card__description">Хрусткі курячі крильця, обсмажені до золотистої скоринки, з пікантним соусом.</p>
+                <p class="food-card__price">185.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Golden crispy chicken nuggets" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Chicken Nuggets</h3>
+                <p class="food-card__description">Ніжне куряче філе в хрусткій паніровці, подається з соусом.</p>
+                <p class="food-card__price">125.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Crispy golden onion rings" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Crispy Onion Rings</h3>
+                <p class="food-card__description">Кільця соковитої цибулі в легкій золотистій паніровці з соусом.</p>
+                <p class="food-card__price">115.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1734774924912-dcbb467f8599?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Crispy mozzarella sticks with dipping sauce" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Mozzarella Sticks</h3>
+                <p class="food-card__description">Палички моцарели в хрусткій скоринці, подаються з томатним соусом.</p>
+                <p class="food-card__price">145.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Golden crispy french fries" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">French Fries</h3>
+                <p class="food-card__description">Хрустка картопля фрі з золотистою скоринкою, подається з томатним соусом.</p>
+                <p class="food-card__price">95.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Grilled chicken skewers with dipping sauces" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Grilled Chicken Skewers</h3>
+                <p class="food-card__description">Куряче філе на грилі з пряними спеціями та соусами для подачі.</p>
+                <p class="food-card__price">175.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block" aria-labelledby="pasta-dishes-category-title">
+          <h3 class="category-title" id="pasta-dishes-category-title">Pasta Dishes</h3>
+          <div class="menu-grid">
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="A bowl of noodles" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Noodles</h3>
+                <p class="food-card__description">Локшина з овочами та пікантним соусом, посипана кунжутом і свіжою зеленню.</p>
+                <p class="food-card__price">90.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Pasta with fresh herbs" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pasta Brunch</h3>
+                <p class="food-card__description">Паста з томатами чері, ароматними травами та тертим сиром пармезан.</p>
+                <p class="food-card__price">128.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="assets/appetizer-pasta-prawns.jpg" alt="Linguine pasta with prawns" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pasta with Prawns</h3>
+                <p class="food-card__description">Лінгвіні з соковитими креветками, часником і зеленню в легкому соусі.</p>
+                <p class="food-card__price">128.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Spaghetti carbonara with parmesan and crispy pancetta" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pasta Carbonara</h3>
+                <p class="food-card__description">Спагеті з вершково-яєчним соусом, хрусткою панчетою та сиром пармезан.</p>
+                <p class="food-card__price">145.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block category-block--pizza" aria-labelledby="pizza-category-title">
+          <h3 class="category-title" id="pizza-category-title">Pizza</h3>
+          <div class="menu-grid">
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Pepperoni pizza" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pizza Pepperoni</h3>
+                <p class="food-card__description">Гаряча піца з тягучим сиром моцарела та гострими ковбасками пепероні.</p>
+                <p class="food-card__price">195.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&amp;fit=max&amp;w=640&amp;q=85" alt="Whole pizza with sausage, mushrooms, olives, dipping sauces, and a cola can" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pepperoni Pizza</h3>
+                <p class="food-card__description">Піца з ковбасками, грибами, оливками й моцарелою, подається з соусами та колою.</p>
+                <p class="food-card__price">260.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=max&amp;w=640&amp;q=85" alt="Classic Italian margherita pizza" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pizza Margherita</h3>
+                <p class="food-card__description">Класична італійська піца зі свіжими томатами, соусом помodoro та ароматним базиліком.</p>
+                <p class="food-card__price">165.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Pizza topped with a blend of cheeses" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pizza Four Cheeses</h3>
+                <p class="food-card__description">Преміальне поєднання чотирьох шляхетних сирів: моцарела, горгонзола, пармезан та дорблю.</p>
+                <p class="food-card__price">220.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1734769484424-36b99dd84818?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Barbecue chicken pizza" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pizza BBQ Chicken</h3>
+                <p class="food-card__description">Копчена куряча грудка, бекон, соковита кукурудза та фірмовий соус барбекю.</p>
+                <p class="food-card__price">210.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="assets/pizza-vegetarian.jpg" alt="Vegetarian pizza with mushrooms, tomatoes, mozzarella, peppers, and olives" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pizza Vegetarian</h3>
+                <p class="food-card__description">Піца з печерицями, томатами, моцарелою, перцем та оливками.</p>
+                <p class="food-card__price">180.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block" aria-labelledby="burgers-category-title">
+          <h3 class="category-title" id="burgers-category-title">Burgers &amp; Sandwiches</h3>
+          <div class="menu-grid">
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Premium beef burger with cheddar, bacon, and fresh vegetables" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Premium Beef Burger</h3>
+                <p class="food-card__description">Сочна котлета з добірної яловичини, сир чеддер, бекон, свіжі овочі та фірмовий соус на духмяній булочці з кунжутом.</p>
+                <p class="food-card__price">220.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Double beef burger with cheddar, lettuce, tomato, and pickles" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Double Beef Burger</h3>
+                <p class="food-card__description">Подвійна яловича котлета, сир чеддер, салат, томати, мариновані огірки та фірмовий соус.</p>
+                <p class="food-card__price">210.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Grilled chicken club sandwich with lettuce, tomato, and cheese" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Chicken Club Sandwich</h3>
+                <p class="food-card__description">Підсмажений хліб із куркою, сиром, хрустким салатом, томатами та ніжним соусом.</p>
+                <p class="food-card__price">185.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640" alt="Grilled sandwiches with fresh vegetables and cheese served with fries" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Grilled Veggie Sandwich</h3>
+                <p class="food-card__description">Золотистий сендвіч із сиром, соковитими овочами та ароматним соусом.</p>
+                <p class="food-card__price">165.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block" aria-labelledby="main-course-category-title">
+          <h2 class="category-title" id="main-course-category-title">Main Course</h2>
+          <div class="menu-grid">
+            <article class="food-card card">
+              <img class="food-card__image" src="assets/appetizer-salmon-steak.jpg" alt="Raw salmon steak" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Salmon Steak</h3>
+                <p class="food-card__description">Ніжний стейк із лосося з овочами та зеленню у фірмовому соусі.</p>
+                <p class="food-card__price">390.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Grilled steak with vegetables" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Grilled Steak</h3>
+                <p class="food-card__description">Соковитий стейк на грилі з овочами, картоплею та ароматним соусом.</p>
+                <p class="food-card__price">320.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Prawns in a savory sauce with rice and fresh herbs" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Prawns in Savory Sauce</h3>
+                <p class="food-card__description">Соковиті креветки в насиченому соусі з рисом, зеленою цибулею та свіжою зеленню.</p>
+                <p class="food-card__price">280.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Grilled meat platter with fries, tomatoes, pickles, and barbecue sauce" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Grilled Meat Platter</h3>
+                <p class="food-card__description">М’ясо, приготоване на грилі, з картоплею фрі, овочами та соусом барбекю.</p>
+                <p class="food-card__price">350.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block" aria-labelledby="sweet-category-title">
+          <h3 class="category-title" id="sweet-category-title">Sweet Category</h3>
+          <div class="menu-grid">
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Creamy custard dessert" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Custard</h3>
+                <p class="food-card__description">Ніжний ванільний крем із вершковим смаком, прикрашений свіжою полуницею.</p>
+                <p class="food-card__price">200.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1562007908-17c67e878c88?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Slice of apple pie" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Apple Pie</h3>
+                <p class="food-card__description">Запашний пиріг із соковитими яблуками, корицею та хрусткою золотистою скоринкою.</p>
+                <p class="food-card__price">250.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Freshly baked pastries" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Pastries</h3>
+                <p class="food-card__description">Асорті свіжої випічки з ніжного тіста — ароматне доповнення до кави чи чаю.</p>
+                <p class="food-card__price">350.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Chocolate fondant dessert" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Chocolate Fondant</h3>
+                <p class="food-card__description">Теплий шоколадний десерт із ніжною рідкою серединкою та насиченим смаком какао.</p>
+                <p class="food-card__price">190.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Cheesecake dessert" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Cheesecake</h3>
+                <p class="food-card__description">Оксамитовий сирний десерт на тонкій основі з легкою вершковою ноткою.</p>
+                <p class="food-card__price">220.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Colorful strawberry macarons" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Strawberry Macarons</h3>
+                <p class="food-card__description">Повітряні мигдальні тістечка з хрусткою оболонкою та ніжною полуничною начинкою.</p>
+                <p class="food-card__price">160.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block" aria-labelledby="drinks-category-title">
+          <h3 class="category-title" id="drinks-category-title">Drinks</h3>
+          <div class="menu-grid">
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Berry lemonade with fresh citrus" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Craft Berry Lemonade (Bottle)</h3>
+                <p class="food-card__delivery-note">Доставляється у захищеній тарі</p>
+                <p class="food-card__price">95.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Iced latte macchiato" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Iced Latte Macchiato (Thermo Cup)</h3>
+                <p class="food-card__delivery-note">Доставляється у захищеній тарі</p>
+                <p class="food-card__price">80.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Freshly squeezed orange juice" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Fresh Orange Juice (Bottle)</h3>
+                <p class="food-card__delivery-note">Доставляється у захищеній тарі</p>
+                <p class="food-card__price">110.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1629654613528-5d0a2e4166de?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Chilled cola with ice on a dark background" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Coca-Cola Zero</h3>
+                <p class="food-card__delivery-note">Доставляється у захищеній тарі</p>
+                <p class="food-card__price">60.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1624517452488-04869289c4ca?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Fanta Orange can" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Fanta Orange (Can)</h3>
+                <p class="food-card__delivery-note">Доставляється у захищеній тарі</p>
+                <p class="food-card__price">60.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1638688569176-5b6db19f9d2a?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Mineral water in a glass bottle" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Borjomi Mineral Water (Glass)</h3>
+                <p class="food-card__delivery-note">Доставляється у захищеній тарі</p>
+                <p class="food-card__price">75.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="assets/bonaqua-water.jpg" alt="Bonaqua mineral water bottle on a cold blue background" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Bonaqua Still Water (Plastic)</h3>
+                <p class="food-card__delivery-note">Доставляється у захищеній тарі</p>
+                <p class="food-card__price">45.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+            <article class="food-card card">
+              <img class="food-card__image" src="https://images.unsplash.com/photo-1614860415560-00085c5c1da1?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Cold brew coffee in a bottle" />
+              <div class="food-card__details">
+                <h3 class="food-card__name">Cold Brew Coffee (Bottle)</h3>
+                <p class="food-card__delivery-note">Доставляється у захищеній тарі</p>
+                <p class="food-card__price">90.00</p>
+                <button class="food-card__add" type="button">Add Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+        </div>
+        <aside class="chef-pick" aria-labelledby="chef-pick-title">
+          <img
+            class="chef-pick__image"
+            src="https://images.unsplash.com/photo-1734769484424-36b99dd84818?auto=format&amp;fit=crop&amp;w=640&amp;q=85"
+            alt="Піца BBQ з куркою"
+          />
+          <div class="chef-pick__details">
+            <p class="chef-pick__eyebrow" data-i18n="chefPick">Рекомендація шефа</p>
+            <h2 class="chef-pick__title" id="chef-pick-title">Піца BBQ з куркою</h2>
+            <p class="chef-pick__description">Копчена куряча грудка, бекон, соковита кукурудза та фірмовий соус барбекю.</p>
+            <a class="chef-pick__link" href="#pizza-category-title"><span data-i18n="chefLink">Переглянути піцу</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </aside>
+        <footer class="menu-footer">
+          <div class="menu-footer__main">
+            <section class="menu-footer__brand" aria-labelledby="footer-brand-title">
+              <h2 class="menu-footer__brand-name" id="footer-brand-title">FOOD HUB</h2>
+              <p class="menu-footer__tagline" data-i18n="footerTagline">Смачна їжа — у кілька кліків.</p>
+            </section>
+            <nav class="menu-footer__nav" aria-labelledby="footer-nav-title">
+              <h2 class="menu-footer__heading" id="footer-nav-title" data-i18n="footerMenu">Категорії меню</h2>
+              <div class="menu-footer__links">
+                <a href="#appetizers-category-title" data-i18n="footerAppetizers">Закуски</a>
+                <a href="#pizza-category-title" data-i18n="footerPizza">Піца</a>
+                <a href="#burgers-category-title" data-i18n="footerBurgers">Бургери та сендвічі</a>
+                <a href="#drinks-category-title" data-i18n="footerDrinks">Напої</a>
+              </div>
+            </nav>
+            <section class="menu-footer__order" aria-labelledby="footer-order-title">
+              <h2 class="menu-footer__heading" id="footer-order-title" data-i18n="footerOrdering">Як замовити</h2>
+              <p data-i18n="footerOrderText">Оберіть страви, додайте їх до кошика та заповніть форму доставки.</p>
+            </section>
+          </div>
+          <p class="menu-footer__copyright">
+            <span data-i18n="footerCopyright">© FOOD HUB. Усі права захищені.</span>
+            <span class="menu-footer__year" id="footer-year"></span>
+          </p>
+        </footer>
+        <button class="back-to-top hidden" id="back-to-top" type="button" aria-label="На початок сторінки" title="На початок сторінки" aria-hidden="true" tabindex="-1">
+          <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+      </section>
+    </main>
+    <div id="cart-modal" class="modal hidden">
+      <section class="cart-dialog" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <header class="cart-dialog__header">
+          <h2 class="cart-dialog__title" id="cart-title">Твоє замовлення</h2>
+          <button class="cart-dialog__close" type="button" aria-label="Закрити кошик">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </header>
+        <div id="cart-items-list" class="cart-items-list" aria-live="polite"></div>
+        <div id="cart-total" class="cart-total" aria-live="polite">Разом: 0.00 грн</div>
+        <form class="checkout-form">
+          <label class="checkout-form__field">
+            <span>Ім'я</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Ваше ім'я" required />
+          </label>
+          <label class="checkout-form__field">
+            <span>Телефон</span>
+            <input type="tel" name="phone" autocomplete="tel" placeholder="+380..." required />
+          </label>
+          <label class="checkout-form__field">
+            <span>Адреса доставки</span>
+            <input type="text" name="address" autocomplete="street-address" placeholder="Ваша адреса" required />
+          </label>
+          <button class="checkout-form__submit" type="button">Оформити доставку</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
